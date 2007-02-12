@@ -1,5 +1,5 @@
 Summary:	A Python interface to libclamav
-Summary(pl):	Interfejs Pythona do libclamav
+Summary(pl.UTF-8):   Interfejs Pythona do libclamav
 Name:		python-pyclamav
 Version:	0.3.3
 Release:	1
@@ -19,7 +19,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 A Python interface to libclamav.
 
-%description -l pl
+%description -l pl.UTF-8
 Interfejs Pythona do libclamav.
 
 %prep
