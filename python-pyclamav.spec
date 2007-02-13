@@ -1,5 +1,5 @@
 Summary:	A Python interface to libclamav
-Summary(pl.UTF-8):   Interfejs Pythona do libclamav
+Summary(pl.UTF-8):	Interfejs Pythona do libclamav
 Name:		python-pyclamav
 Version:	0.3.3
 Release:	1
