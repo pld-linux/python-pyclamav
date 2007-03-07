@@ -10,7 +10,7 @@ Source0:	http://norman.free.fr/norman/python/pyclamav/pyclamav-%{version}.tar.gz
 URL:		http://xael.org/norman/python/pyclamav/index.html
 BuildRequires:  clamav-devel >= 0:0.80
 BuildRequires:	python
-BuildRequires:	python-devel >= 1:2.5
+BuildRequires:	python-devel >= 1:2.4
 Requires:       clamav >= 0:0.80
 Requires:	python
 %pyrequires_eq	python-modules
@@ -47,4 +47,3 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{py_sitedir}/*.so
 %dir %{_examplesdir}/%{name}-%{version}
 %{_examplesdir}/%{name}-%{version}/example.py
-%{py_sitedir}/*.egg-info
