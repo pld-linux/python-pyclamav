@@ -2,7 +2,7 @@ Summary:	A Python interface to libclamav
 Summary(pl.UTF-8):	Interfejs Pythona do libclamav
 Name:		python-pyclamav
 Version:	0.3.3
-Release:	3
+Release:	4
 License:	GPL
 Group:		Libraries/Python
 Source0:	http://norman.free.fr/norman/python/pyclamav/pyclamav-%{version}.tar.gz
