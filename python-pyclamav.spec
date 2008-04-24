@@ -1,3 +1,5 @@
+# TODO
+# - patch for clamav 0.93
 Summary:	A Python interface to libclamav
 Summary(pl.UTF-8):	Interfejs Pythona do libclamav
 Name:		python-pyclamav
