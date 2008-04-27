@@ -1,18 +1,16 @@
-# TODO
-# - patch for clamav 0.93
 Summary:	A Python interface to libclamav
 Summary(pl.UTF-8):	Interfejs Pythona do libclamav
 Name:		python-pyclamav
-Version:	0.3.3
-Release:	4
+Version:	0.4.1
+Release:	1
 License:	GPL
 Group:		Libraries/Python
 Source0:	http://norman.free.fr/norman/python/pyclamav/pyclamav-%{version}.tar.gz
-# Source0-md5:	7899cff81288b201503747a0ba4d7db3
+# Source0-md5:	9e1f29ea118bac87223ff4df3c077556
 URL:		http://xael.org/norman/python/pyclamav/index.html
 BuildRequires:  clamav-devel >= 0:0.80
 BuildRequires:	python
-BuildRequires:	python-devel >= 1:2.5
+BuildRequires:	python-devel >= 1:2.4
 Requires:       clamav >= 0:0.80
 Requires:	python
 %pyrequires_eq	python-modules
@@ -28,13 +26,12 @@ Interfejs Pythona do libclamav.
 %setup -q -n pyclamav-%{version}
 
 %build
-env CFLAGS="%{rpmcflags}" %{_bindir}/python setup.py build
+env CFLAGS="%{rpmcflags}" %{_python} setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-
-python -- setup.py install \
+%{__python} -- setup.py install \
 	--root=$RPM_BUILD_ROOT \
 	--optimize=2
 
@@ -49,4 +46,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{py_sitedir}/*.so
 %dir %{_examplesdir}/%{name}-%{version}
 %{_examplesdir}/%{name}-%{version}/example.py
+%if "%{py_ver}" > "2.4"
 %{py_sitedir}/*.egg-info
+%endif
