@@ -28,7 +28,7 @@ Interfejs Pythona do libclamav.
 %setup -q -n pyclamav-%{version}
 
 %build
-env CFLAGS="%{rpmcflags}" %{_python} setup.py build
+env CFLAGS="%{rpmcflags}" %{__python} setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
