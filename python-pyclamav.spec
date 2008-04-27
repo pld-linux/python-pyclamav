@@ -1,3 +1,5 @@
+# TODO
+# - R: clamav? library requiring daemon???
 Summary:	A Python interface to libclamav
 Summary(pl.UTF-8):	Interfejs Pythona do libclamav
 Name:		python-pyclamav
@@ -35,7 +37,7 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 	--root=$RPM_BUILD_ROOT \
 	--optimize=2
 
-cp -aR example.py $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+cp -a example.py $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
