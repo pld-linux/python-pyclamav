@@ -4,16 +4,17 @@ Summary:	A Python interface to libclamav
 Summary(pl.UTF-8):	Interfejs Pythona do libclamav
 Name:		python-pyclamav
 Version:	0.4.1
-Release:	9
+Release:	10
 License:	GPL
 Group:		Libraries/Python
 Source0:	http://norman.free.fr/norman/python/pyclamav/pyclamav-%{version}.tar.gz
 # Source0-md5:	9e1f29ea118bac87223ff4df3c077556
+Patch0:		%{name}-new-api.patch
 URL:		http://xael.org/norman/python/pyclamav/index.html
-BuildRequires:  clamav-devel >= 0:0.80
+BuildRequires:  clamav-devel >= 0:0.95
 BuildRequires:	python
 BuildRequires:	python-devel >= 1:2.4
-Requires:       clamav >= 0:0.80
+Requires:       clamav >= 0:0.95
 Requires:	python
 %pyrequires_eq	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -26,6 +27,7 @@ Interfejs Pythona do libclamav.
 
 %prep
 %setup -q -n pyclamav-%{version}
+%patch0 -p1
 
 %build
 env CFLAGS="%{rpmcflags}" %{__python} setup.py build
