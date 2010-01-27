@@ -15,6 +15,7 @@ BuildRequires:	clamav-devel >= 0:0.95
 BuildRequires:	python
 BuildRequires:	python-devel >= 1:2.4
 BuildRequires:	python-modules
+BuildRequires:	rpm-pythonprov
 Requires:	clamav >= 0:0.95
 Requires:	python
 %pyrequires_eq	python-modules
