@@ -11,10 +11,11 @@ Source0:	http://norman.free.fr/norman/python/pyclamav/pyclamav-%{version}.tar.gz
 # Source0-md5:	9e1f29ea118bac87223ff4df3c077556
 Patch0:		%{name}-new-api.patch
 URL:		http://xael.org/norman/python/pyclamav/index.html
-BuildRequires:  clamav-devel >= 0:0.95
+BuildRequires:	clamav-devel >= 0:0.95
 BuildRequires:	python
 BuildRequires:	python-devel >= 1:2.4
-Requires:       clamav >= 0:0.95
+BuildRequires:	python-modules
+Requires:	clamav >= 0:0.95
 Requires:	python
 %pyrequires_eq	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
