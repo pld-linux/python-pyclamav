@@ -32,7 +32,7 @@ Interfejs Pythona do libclamav.
 %patch0 -p1
 
 %build
-env CFLAGS="%{rpmcflags}" %{__python} setup.py build
+env CFLAGS="%{rpmcflags}" %py_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
