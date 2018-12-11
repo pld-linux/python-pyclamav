@@ -124,3 +124,22 @@
  }
  
 
+--- pyclamav-0.4.1/pyclamav.c.orig	2018-12-10 21:43:22.642033238 +0100
++++ pyclamav-0.4.1/pyclamav.c	2018-12-11 17:39:55.224546828 +0100
+@@ -210,7 +210,16 @@
+     return NULL;     
+   }
+ 
++#ifdef CL_SCAN_STDOPT
+   ret = cl_scanfile(file_to_scan, &virname, &size, engine, CL_SCAN_STDOPT);
++#else
++  {
++    struct cl_scan_options scanoptions = {CL_SCAN_GENERAL_HEURISTICS,
++	                                  CL_SCAN_PARSE_ARCHIVE|CL_SCAN_PARSE_ELF|CL_SCAN_PARSE_PDF|CL_SCAN_PARSE_SWF|CL_SCAN_PARSE_HWP3|CL_SCAN_PARSE_XMLDOCS|CL_SCAN_PARSE_MAIL|CL_SCAN_PARSE_OLE2|CL_SCAN_PARSE_HTML|CL_SCAN_PARSE_PE,
++					  0,0,0};
++    ret = cl_scanfile(file_to_scan, &virname, &size, engine, &scanoptions);
++  }
++#endif
+ 
+   /* Test return code */
+   switch (ret) {
