@@ -31,7 +31,7 @@ Interfejs Pythona do libclamav.
 
 %prep
 %setup -q -n pyclamav-%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 CFLAGS="%{rpmcflags} $(pkg-config --cflags libclamav)"
